@@ -1,0 +1,24 @@
+<!doctype html>
+<title>greeter</title>
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+<main></main>
+
+<script type="text/babel">
+  function Greeter() {
+    const [name, setName] = React.useState('unknown');
+    return (
+      <div>
+        <p>Hello, {name}</p>
+        <input onChange={(e) => setName(e.target.value)} />
+      </div>
+    );
+  }
+
+  ReactDOM.render(
+    <Greeter />,
+    document.querySelector('main'),
+  );
+</script>

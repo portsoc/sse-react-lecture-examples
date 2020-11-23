@@ -1,0 +1,30 @@
+<!doctype html>
+<title>timer</title>
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+<main></main>
+
+<script type="text/babel">
+  function Timer() {
+    const [seconds, setSeconds] = React.useState(0);
+
+    React.useEffect(() => {
+      const startTime = Date.now();
+      const updateTime = () => setSeconds(Math.round((Date.now() - startTime) / 1000));
+      const interval = setInterval(updateTime, 1000);
+
+      return () => clearInterval(interval); // cleanup
+    }, [ /* no dependencies */ ]);
+
+    return (
+      <div>Seconds: {seconds}</div>
+    );
+  }
+
+  ReactDOM.render(
+    <Timer />,
+    document.querySelector('main'),
+  );
+</script>
