@@ -10,3 +10,4 @@ This is not how React is used in production, it is only for quick experimentatio
 * `2-greeter-with-input.html` – a component with HTML input and state
 * `3-counter.html` – a component with state and a button
 * `4-timer.html` – a timer done with effects and state
+* `5-todo-list.html` – an adaptation of https://reactjs.org/#an-application to functional components
